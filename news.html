@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takeover News</title>
+  <link rel="stylesheet" href="mystyle.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f4f6f8;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+
+    .navbar-custom {
+      background-color: #0b73c9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+    }
+
+    .navbar-logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-menu li a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .navbar-menu li a img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .navbar-menu li a:hover {
+      opacity: 0.85;
+    }
+
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 30px auto 50px;
+      padding: 0 20px;
+    }
+
+    .news-header {
+      background: white;
+      padding: 24px;
+      border: 1px solid #d9d9d9;
+      margin-bottom: 24px;
+    }
+
+    .news-header h1 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+      color: #0b73c9;
+    }
+
+    .news-header p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .main-story {
+      background: white;
+      border: 1px solid #d9d9d9;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .main-story img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .main-story-content {
+      padding: 22px;
+    }
+
+    .main-story h2 {
+      margin: 0 0 12px;
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+
+    .main-story p {
+      margin: 0 0 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      background-color: #0b73c9;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .read-more-btn:hover {
+      background-color: #095ca3;
+      color: white;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .news-card {
+      background: white;
+      border: 1px solid #d9d9d9;
+      overflow: hidden;
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .news-card-content {
+      padding: 16px;
+    }
+
+    .news-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .news-card p {
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-custom {
+        flex-direction: column;
+        gap: 14px;
+        padding: 12px 16px;
+      }
+
+      .navbar-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .navbar-logo img {
+        height: 46px;
+      }
+
+      .main-story img {
+        height: 240px;
+      }
+
+      .news-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .main-story h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar-custom" aria-label="Main navigation">
+      <a href="index.html" class="navbar-logo">
+        <img src="Company Assets/takeover logo trans.png" alt="Takeover Logo">
+      </a>
+
+      <ul class="navbar-menu">
+        <li>
+          <a href="news.html">
+            News
+            <img src="Icons/News Logo.png" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            Contact Page
+            <img src="Icons/contact.png" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="gallery.html">
+            News Gallery
+            <img src="Icons/Gallery (2).png" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-wrapper">
+    <section class="news-header">
+      <h1>Takeover News</h1>
+      <p>Read the latest technology stories, new ideas, and inspiring innovations for young people.</p>
+    </section>
+
+    <article class="main-story">
+      <img src="Images/Main News Story.jpg" alt="A featured image for a youth technology news story">
+      <div class="main-story-content">
+        <h2>13-Year-Old Genius Builds Robot That Farms – Could Teens Be the Next Space Pioneers?</h2>
+        <p>
+          Young inventors are proving that technology, coding, and creative thinking can make a real difference. Stories like this show how teenagers are already helping shape the future.
+        </p>
+        <a href="mainnewsstory.html" class="read-more-btn">Read More</a>
+      </div>
+    </article>
+
+    <section class="news-grid">
+      <article class="news-card">
+        <img src="Images/justalaptop.jpg" alt="A laptop displayed for a student technology article">
+        <div class="news-card-content">
+          <h3>Best Student Laptops for School and Creative Projects</h3>
+          <p>Discover laptops that offer good performance, portability, and value for young creators.</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="Images/Up Coming tech.jpg" alt="A mobile technology image for a future phone feature story">
+        <div class="news-card-content">
+          <h3>Upcoming Phone Features That Could Change Everyday Life</h3>
+          <p>Take a look at new ideas in smartphone design, apps, and next-generation mobile technology.</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="Images/gaming.jpg" alt="A computer setup used for a technology news feature">
+        <div class="news-card-content">
+          <h3>New Computer Setups for Gaming, Editing, and Coding</h3>
+          <p>Explore fresh computer builds designed for performance, creativity, and technical skills.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takeover Form</title>
+  <link rel="stylesheet" href="mystyle.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+
+    .navbar-custom {
+      background-color: #0b73c9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+    }
+
+    .navbar-logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-menu li a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .navbar-menu li a img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .navbar-menu li a:hover {
+      opacity: 0.85;
+    }
+
+    .form-page {
+      max-width: 900px;
+      margin: 30px auto 50px;
+      padding: 0 20px;
+    }
+
+    .form-header {
+      background: white;
+      padding: 24px;
+      border: 1px solid #d9d9d9;
+      margin-bottom: 20px;
+    }
+
+    .form-header h1 {
+      font-size: 1.8rem;
+      margin: 0 0 10px;
+      color: #0b73c9;
+    }
+
+    .form-header p {
+      margin: 0;
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .privacy-note {
+      background: white;
+      border: 1px solid #d9d9d9;
+      padding: 16px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .form-card {
+      background: white;
+      border: 1px solid #d9d9d9;
+      padding: 24px;
+    }
+
+    .required-note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 20px;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .input-group label,
+    fieldset legend {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cfcfcf;
+      font-size: 0.96rem;
+      font-family: inherit;
+      background: white;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus,
+    .input-group textarea:focus {
+      outline: none;
+      border-color: #0b73c9;
+    }
+
+    .input-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    fieldset {
+      border: 1px solid #d9d9d9;
+      padding: 16px;
+      margin: 0;
+      background: white;
+    }
+
+    legend {
+      padding: 0 6px;
+      font-size: 1rem;
+      color: #0b73c9;
+    }
+
+    .radio-group,
+    .age-range-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 4px;
+    }
+
+    .radio-group label,
+    .age-range-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .dynamic-label {
+      color: #0b73c9;
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+    }
+
+    .char-count {
+      font-size: 0.82rem;
+      color: #777;
+      text-align: right;
+      margin-top: 6px;
+    }
+
+    .submit-btn {
+      margin-top: 24px;
+      width: 100%;
+      background-color: #0b73c9;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #095ca3;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-custom {
+        flex-direction: column;
+        gap: 14px;
+        padding: 12px 16px;
+      }
+
+      .navbar-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .navbar-logo img {
+        height: 46px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .form-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar-custom">
+      <a href="index.html" class="navbar-logo">
+        <img src="Company Assets/takeover logo trans.png" alt="Takeover Logo">
+      </a>
+
+      <ul class="navbar-menu">
+        <li>
+          <a href="news.html">
+            News
+            <img src="Icons/News Logo.png" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            Contact Page
+            <img src="Icons/contact.png" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="gallery.html">
+            News Gallery
+            <img src="Icons/Gallery (2).png" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <div class="form-header">
+      <h1>Share Your Ideas With Takeover</h1>
+      <p>Send us your questions, feedback, and suggestions to help improve the website for young technology fans.</p>
+    </div>
+
+    <div class="privacy-note">
+      By submitting this form, you consent to Takeover using your details to respond to your message.
+    </div>
+
+    <form class="form-card" action="thankyou.html">
+      <p class="required-note">Fields marked * are required.</p>
+
+      <div class="form-grid">
+        <div class="input-group">
+          <label for="fullname">Full Name *</label>
+          <input type="text" id="fullname" name="fullname" placeholder="e.g. Alex Smith" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="e.g. alex@email.com" required>
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000">
+        </div>
+
+        <fieldset class="full-width">
+          <legend>Age Range *</legend>
+          <div class="age-range-group">
+            <label><input type="radio" name="age" value="under14" required> Under 14</label>
+            <label><input type="radio" name="age" value="14-15"> 14–15</label>
+            <label><input type="radio" name="age" value="16-17"> 16–17</label>
+            <label><input type="radio" name="age" value="18+"> 18+</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="full-width">
+          <legend>Reason for Contact *</legend>
+          <div class="radio-group">
+            <label><input id="radio-question" name="Reason" type="radio" value="question" required> Questions</label>
+            <label><input id="radio-suggestion" name="Reason" type="radio" value="suggestion"> Suggestions / Ideas</label>
+            <label><input id="radio-feedback" name="Reason" type="radio" value="feedback"> General Feedback</label>
+            <label><input id="radio-bug" name="Reason" type="radio" value="bug"> Report a Problem</label>
+          </div>
+        </fieldset>
+
+        <div class="input-group full-width">
+          <label for="topic">Topic Area</label>
+          <select id="topic" name="topic">
+            <option value="">-- Select a topic --</option>
+            <option value="news">News Articles</option>
+            <option value="gallery">Image Gallery</option>
+            <option value="design">Website Design</option>
+            <option value="tech">Technology Content</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="input-group full-width">
+          <p id="changeText" class="dynamic-label">Type what you think will benefit the Takeover website.</p>
+          <label for="message">Enter Text *</label>
+          <textarea id="message" name="message" placeholder="Write your message here..." maxlength="500" oninput="updateCount(this)" required></textarea>
+          <p class="char-count"><span id="charCount">0</span> / 500 characters</p>
+        </div>
+
+        <div class="input-group">
+          <label for="hearabout">How did you hear about Takeover?</label>
+          <select id="hearabout" name="hearabout">
+            <option value="">-- Select an option --</option>
+            <option value="school">School</option>
+            <option value="friend">Friend / Family</option>
+            <option value="social">Social Media</option>
+            <option value="search">Search Engine</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Would you like a reply?</legend>
+          <div class="radio-group">
+            <label><input type="radio" name="reply" value="yes"> Yes please</label>
+            <label><input type="radio" name="reply" value="no"> No thanks</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Form</button>
+    </form>
+  </main>
+
+  <script>
+    const radios = document.querySelectorAll('input[name="Reason"]');
+    const changeText = document.getElementById("changeText");
+
+    radios.forEach(radio => {
+      radio.addEventListener("change", function() {
+        if (this.value === "question") {
+          changeText.textContent = "Type your question about the Takeover website.";
+        } else if (this.value === "suggestion") {
+          changeText.textContent = "Type what you think will benefit the Takeover website.";
+        } else if (this.value === "feedback") {
+          changeText.textContent = "Tell us what you think about Takeover so far.";
+        } else if (this.value === "bug") {
+          changeText.textContent = "Describe the problem you found so we can fix it.";
+        }
+      });
+    });
+
+    function updateCount(textarea) {
+      document.getElementById("charCount").textContent = textarea.value.length;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
